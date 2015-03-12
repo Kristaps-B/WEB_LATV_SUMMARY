@@ -1,7 +1,6 @@
 package com.latvsumm.models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import model.Sentence;
 import model.SummModel;
@@ -10,6 +9,8 @@ public class MyModel {
 	private String text;
 	
 	private int percents;
+	
+	private double [][] simMatrix;
 	
 	
 	public int getPercents() {
@@ -45,15 +46,15 @@ public class MyModel {
 		
 		summModel.getWordList(sentenceList);
 		
-		double[][] simMatrix = summModel.getSimilarityMatrix(sentenceList);
+		simMatrix = summModel.getSimilarityMatrix(sentenceList);
 		
 		sentenceList = summModel.getRankedSentences(sentenceList, simMatrix);
 		
 		
 		
-		for (Sentence s: sentenceList) {
-			System.out.println("Teikums: "+s.getID()+") "+s.getOriginalSentence()+" ["+s.getRank()+"]");
-		}
+		//for (Sentence s: sentenceList) {
+		//	System.out.println("Teikums: "+s.getID()+") "+s.getOriginalSentence()+" ["+s.getRank()+"]");
+		//}
 		
 	}
 	
@@ -64,7 +65,7 @@ public class MyModel {
 		if (percents >100) percents = 100;
 		if (percents<0) percents = 0;
 		
-		System.out.println("Izveletais kopsavilkuma apjoms ir: "+ percents+ " %");
+		//System.out.println("Izveletais kopsavilkuma apjoms ir: "+ percents+ " %");
 		
 		Sentence [] sentArray = summModel.getSummary(percents, sentenceList);
 		
@@ -73,5 +74,9 @@ public class MyModel {
 		}
 		
 		return result;
+	}
+	
+	public double [][] getSimMatrix() {
+		return simMatrix;
 	}
 }

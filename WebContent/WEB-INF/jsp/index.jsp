@@ -8,9 +8,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Kopsavilkuma sistēma</title>
 </head>
-<body>
+<body onload = "start()">
 	
-	<script type="text/javascript">		
+	
+	<script type="text/javascript">
+	
+	function start() {
+			var p = document.getElementById('range').value;
+			document.getElementById("percentsDIV").innerHTML = "Kopsavilkuma apjoms: "+p +" %";
+		}
+			
 		function sliderChanged(val) {
 			document.getElementById("percentsDIV").innerHTML = "Kopsavilkuma apjoms: "+val +" %";
 		}
@@ -29,7 +36,7 @@
 		<div id = "percentsDIV">Kopsavilkuma apjoms: 50 %</div>
 		
 		0
-		<form:input oninput = "sliderChanged(this.value)" path = "percents" type ="range" min = "0" max = "100" value = "50"/>
+		<form:input id = "range" oninput = "sliderChanged(this.value)" path = "percents" type ="range" min = "0" max = "100" value = "50"/>
 		100
 		<br/>
 		<br/>

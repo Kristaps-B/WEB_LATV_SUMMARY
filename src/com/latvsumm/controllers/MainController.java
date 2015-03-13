@@ -40,7 +40,7 @@ public class MainController {
 	//Kluda!
 	//Session attribute 'text' required - not found in session
 	
-	@RequestMapping(value = "/submitArticle", method = RequestMethod.POST)
+	@RequestMapping(value = "/submit-article", method = RequestMethod.POST)
 	public String submitArticleController(@ModelAttribute("text") MyModel text) {
 		
 		
@@ -58,7 +58,7 @@ public class MainController {
 		return "summary";
 	}
 	
-	@RequestMapping(value = "/simtable")
+	@RequestMapping(value = "/sim-table")
 	public String simTableController(Model model) {
 		
 		MyModel text = (MyModel)model.asMap().get("text");

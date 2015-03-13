@@ -46,8 +46,8 @@ th, td {
 	</c:forEach>
 </table>
 
-<a href="/WebLatvSumm/index.html">Uz sākumu</a> <br/>
-<a href="/WebLatvSumm/summary.html">Uz kopsavilkumu</a>
+<a href="/web-latv-summary/index.html">Uz sākumu</a> <br/>
+<a href="/web-latv-summary/summary.html">Uz kopsavilkumu</a>
 
 </body>
 </html>

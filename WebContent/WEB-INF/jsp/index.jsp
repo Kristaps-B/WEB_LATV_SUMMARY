@@ -29,7 +29,7 @@
 	
 	
 	
-	<form:form method="POST" commandName = "text" action="/WebLatvSumm/submitArticle.html">
+	<form:form method="POST" commandName = "text" action="/web-latv-summary/submit-article.html">
 		<b>Teksts:</b><br/>
 		<form:textarea path = "text"  rows="16" cols="120"></form:textarea>
 		<br/>

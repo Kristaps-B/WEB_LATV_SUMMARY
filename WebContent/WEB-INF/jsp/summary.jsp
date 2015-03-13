@@ -25,7 +25,7 @@
 	</script>
 	
 	<h1>KOPSAVILKUMS</h1>
-	<a href="/WebLatvSumm/simtable.html">Līdzības matrica</a>
+	<a href="/web-latv-summary/sim-table.html">Līdzības matrica</a>
 	<br/>
 	<b>Kopsavilkuma apjoms: ${text.getPercents()} %</b>
 	<br/>
@@ -36,7 +36,7 @@
 		</c:forEach>
 	</ol>
 	
-	<form:form method="POST" commandName = "text" action="/WebLatvSumm/submitArticle.html">
+	<form:form method="POST" commandName = "text" action="/web-latv-summary/submit-article.html">
 		<div id = "percentsDIV">Kopsavilkuma apjoms: 50 %</div>
 		
 		0
@@ -51,7 +51,7 @@
 	
 	<br/>
 	<br/>
-	<a href="/WebLatvSumm/index.html">Uz sākumu</a>
+	<a href="/web-latv-summary/index.html">Uz sākumu</a>
 	
 </body>
 </html>

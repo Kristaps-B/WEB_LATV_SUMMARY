@@ -5,16 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Teikumu līdzības matrica</title>
 
 <style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-}
+ table, th, td {
+ 	border: 2px solid black;
+ 	border-collapse: collapse;
+ }
+ th, td {
+ 	padding: 5px;
+ }
 </style>
 
 
@@ -40,7 +41,7 @@ th, td {
 			<td><b><%=i %></b></td>
 		<% i++; %>
 		<c:forEach var="number" items="${row}" varStatus="statusCol">
-			<td>${number}</td>
+			<td><a href = "/web-latv-summary/sentence-comparison.html?sentence1=${statusRow.index}&sentence2=${statusCol.index}">${number}</a></td>
 		</c:forEach>
 		</tr>
 	</c:forEach>

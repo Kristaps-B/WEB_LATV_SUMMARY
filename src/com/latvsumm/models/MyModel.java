@@ -3,6 +3,7 @@ package com.latvsumm.models;
 import java.util.ArrayList;
 
 import model.Sentence;
+import model.SentenceComparison;
 import model.SummModel;
 
 public class MyModel {
@@ -11,6 +12,8 @@ public class MyModel {
 	private int percents;
 	
 	private double [][] simMatrix;
+	
+	private SentenceComparison sentenceComparison;
 	
 	
 	public int getPercents() {
@@ -78,5 +81,22 @@ public class MyModel {
 	
 	public double [][] getSimMatrix() {
 		return simMatrix;
+	}
+	
+	public void setSentenceComparison(int row, int col) {
+		// Salidzina teikumus!
+		sentenceComparison = new SentenceComparison(
+				sentenceList.get(row), sentenceList.get(col));
+
+	}
+	
+	public SentenceComparison getSentenceComparison() {
+		//sentenceComparison.getFirstSentenceID();
+		//sentenceComparison.getFirstSentence();
+		
+		//sentenceComparison.getW
+		
+		
+		return sentenceComparison;
 	}
 }

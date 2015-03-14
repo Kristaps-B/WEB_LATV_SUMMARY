@@ -3,7 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Kļūda!</title>
+
 </head>
 <body>
 <h1>UPS! KĻŪDA!</h1>

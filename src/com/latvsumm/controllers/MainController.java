@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.latvsumm.models.MyModel;
@@ -63,16 +64,34 @@ public class MainController {
 		
 		MyModel text = (MyModel)model.asMap().get("text");
 		
-		System.out.println("SIMILARITY MATRIX!");
-		System.out.println(text.getText());
+		//System.out.println("SIMILARITY MATRIX!");
+		//System.out.println(text.getText());
 		
 		
 		
 		return "simtable";
 	}
 	
-	  @ExceptionHandler(Exception.class)
-	  public String exceptionController() {
-		  return "exception";
-	  }
+	@RequestMapping(value="/sentence-comparison",
+			params = {"sentence1", "sentence2"})
+	public String sentenceComparison(Model model, 
+			@RequestParam(value = "sentence1") int sentence1,
+			@RequestParam(value = "sentence2") int sentence2
+			) {
+		
+		System.out.println(sentence1+" "+sentence2);
+		
+		MyModel text = (MyModel)model.asMap().get("text");
+		
+		text.setSentenceComparison(sentence1, sentence2);
+		
+		
+		
+		return "sentence-comparison";
+	}
+	
+  @ExceptionHandler(Exception.class)
+  public String exceptionController() {
+	  return "exception";
+  }
 }

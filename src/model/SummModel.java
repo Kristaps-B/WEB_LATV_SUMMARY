@@ -3,8 +3,13 @@ package model;
 import java.io.File;
 import java.util.ArrayList;
 
+import opennlp.tools.sentdetect.SentenceDetector;
+import opennlp.tools.sentdetect.SentenceDetectorME;
+
 
 public class SummModel {
+	
+	TextRankSent textRank;
 
 	public String getFile(File file) throws Exception {
 		String rez = null;
@@ -18,12 +23,19 @@ public class SummModel {
 		return rez;
 	}
 
-	public ArrayList<Sentence> getSentenceList(String text) {
+	public ArrayList<Sentence> getSentenceList(String text, SentenceDetectorME sentenceDetector) {
 		ArrayList<Sentence> rez = null;
 
 		// Apstrada tekstu
-		SentenceSplitter textProcessing = new SentenceSplitter(text);
-		textProcessing.splitIntoSentences();
+		SentenceSplitter textProcessing = null;
+		
+		if (sentenceDetector == null) {
+			textProcessing= new SentenceSplitter(text);
+			textProcessing.splitIntoSentences();
+		} else {
+			textProcessing = new SentenceSplitter(text, sentenceDetector);
+			textProcessing.splitIntoSentencesOpenNLP();
+		}
 
 		rez = textProcessing.getSentenceList();
 
@@ -46,7 +58,7 @@ public class SummModel {
 		ArrayList<Sentence> rez = null;
 
 		// Veic textrank algoritmu
-		TextRankSent textRank = new TextRankSent(simMatrix);
+		textRank = new TextRankSent(simMatrix);
 		textRank.startTextRank();
 
 		double[] sentRank = textRank.getScoreVector();
@@ -99,6 +111,11 @@ public class SummModel {
 		result = wordListGenerator.getWordList();
 
 		return result;
+	}
+	
+	public ArrayList <ArrayList <Double>> getIterList() {
+		return textRank.getIterList();
+		
 	}
 
 }

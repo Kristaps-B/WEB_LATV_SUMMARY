@@ -23,7 +23,11 @@
 <body>
 <h1>TEIKUMU LĪDZĪBAS MATRICA</h1>
 <br/>
-
+	<a href="/web-latv-summary/index.html">Sākums</a>
+	<a href="/web-latv-summary/summary.html">Kopsavilkums</a>
+	<a href="/web-latv-summary/sim-table.html">Līdzības matrica</a>
+	<a href="/web-latv-summary/all-sentences.html">Teikumi</a>
+	<a href="/web-latv-summary/all-iterations.html">Text-rank</a>
 
 
 <br/>

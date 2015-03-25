@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class TextRankSent {
 
 	private double[][] simMatrix;
@@ -7,6 +9,8 @@ public class TextRankSent {
 	private double[] oldScoreVector;
 
 	private final double d = 0.85;
+	
+	private ArrayList <ArrayList<Double>> iterList = new ArrayList<ArrayList<Double>>();
 
 	public TextRankSent(double[][] simMatrix) {
 		this.simMatrix = simMatrix;
@@ -29,11 +33,22 @@ public class TextRankSent {
 			for (int i = 0; i < oldScoreVector.length; i++) {
 				oldScoreVector[i] = scoreVector[i];
 			}
+			showScoreVector();
 			textRankIteration();
 
-			// showScoreVector();
+			
 		}
 
+	}
+	
+	private void showScoreVector() {
+		ArrayList <Double> l = new ArrayList<>();
+		for (double d:scoreVector) {
+			System.out.print(d+" ");
+			l.add(d);
+		}
+		iterList.add(l);
+		System.out.println();
 	}
 
 	private void setStartingVectorScore() {
@@ -114,6 +129,10 @@ public class TextRankSent {
 
 	public double[] getScoreVector() {
 		return scoreVector;
+	}
+	
+	public ArrayList <ArrayList<Double>> getIterList() {
+		return iterList;
 	}
 
 }

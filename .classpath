@@ -22,5 +22,9 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lucene-analyzers-common-5.0.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/opennlp-maxent-3.0.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/opennlp-tools-1.5.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/opennlp-uima-1.5.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

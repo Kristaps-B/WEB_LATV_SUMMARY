@@ -3,6 +3,15 @@ package model;
 public class OneWord {
 	private String word;
 	private int index;
+	private String stem;
+
+	public String getStem() {
+		return stem;
+	}
+
+	public void setStem(String stem) {
+		this.stem = stem;
+	}
 
 	public OneWord(String word, int index) {
 		this.word = word;

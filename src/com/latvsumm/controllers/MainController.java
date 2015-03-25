@@ -90,8 +90,25 @@ public class MainController {
 		return "sentence-comparison";
 	}
 	
+	
   @ExceptionHandler(Exception.class)
   public String exceptionController() {
-	  return "exception";
+    return "exception";
   }
+  
+  
+  @RequestMapping(value = "all-sentences")
+  public String allSentences(Model model) {
+	  
+	  MyModel text = (MyModel)model.asMap().get("text");
+	  
+	  return "sentences";
+  }
+  
+  @RequestMapping(value = "all-iterations") 
+  public String AllIterations(Model model) {
+	  MyModel text = (MyModel)model.asMap().get("text");
+	  return "iterations";
+  }
+  
 }

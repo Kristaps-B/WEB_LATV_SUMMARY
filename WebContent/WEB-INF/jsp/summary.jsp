@@ -28,14 +28,21 @@
 	</script>
 	
 	<h1>KOPSAVILKUMS</h1>
+	
+	<a href="/web-latv-summary/index.html">Sākums</a>
+	<a href="/web-latv-summary/summary.html">Kopsavilkums</a>
 	<a href="/web-latv-summary/sim-table.html">Līdzības matrica</a>
+	<a href="/web-latv-summary/all-sentences.html">Teikumi</a>
+	<a href="/web-latv-summary/all-iterations.html">Text-rank</a>
+	
+	
 	<br/>
 	<b>Kopsavilkuma apjoms: ${text.getPercents()} %</b>
 	<br/>
 	
 	<ol>
 		<c:forEach var ="listValue" items="${text.getSummaryList()}">
-			<li>${listValue.getOriginalSentence()} [ID: ${listValue.getID()} RANGS: ${listValue.getRank() }]</li>
+			<li>${listValue.getOriginalSentence()} [ID: ${listValue.getID()} RANGS: ${listValue.getRank() }] </li><br/>
 		</c:forEach>
 	</ol>
 	
@@ -54,7 +61,8 @@
 	
 	<br/>
 	<br/>
-	<a href="/web-latv-summary/index.html">Uz sākumu</a>
+	
+	
 	
 </body>
 </html>

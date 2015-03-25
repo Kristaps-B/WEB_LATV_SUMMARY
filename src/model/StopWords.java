@@ -117,7 +117,11 @@ public class StopWords {
 			"varçs",
 			// more
 			"bûtu", "kuras", "diez", "viss", "vismaz", "kas", "viòð", "daudz",
-			"tâm", "ir", "tâdas", "viòi", "tas", "to", "nav", "mûs", "viòus",
+			"tâm", "ir", "tâdas", "viòi", "tas", 
+			"to", 
+			//"a",
+			
+			"nav", "mûs", "viòus",
 			"viòiem", "tiem", "tie", "tâs", "ko", "ðiem", "kad", "vçl",
 			"ðâ",
 			"viòam",

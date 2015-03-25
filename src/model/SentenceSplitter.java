@@ -2,15 +2,40 @@ package model;
 
 import java.util.ArrayList;
 
+import opennlp.tools.sentdetect.SentenceDetectorME;
+
 public class SentenceSplitter {
 
 	private String text = null;
 
 	private ArrayList<Sentence> sentenceList = new ArrayList<>();
+	
+	private SentenceDetectorME sentenceDetectorME;
 
 	public SentenceSplitter(String text) {
 		this.text = text;
-
+		
+	}
+	
+	public SentenceSplitter(String text, SentenceDetectorME sentenceDetectorME) {
+		this.text = text;
+		this.sentenceDetectorME = sentenceDetectorME;
+		//System.out.println("SentDectetorME");
+	}
+	
+	public void splitIntoSentencesOpenNLP() {
+		//System.out.println("Dala teikumus ar OPENNLP!");
+		
+		String sentences [] = sentenceDetectorME.sentDetect(text);
+		//System.out.println("Pec!");
+		
+		int id = 1;
+		for (String s:sentences) {
+			//System.out.println("Teikums: "+s);
+			
+			sentenceList.add(new Sentence(id, s));
+			id++;
+		}
 	}
 
 	public void splitIntoSentences() {

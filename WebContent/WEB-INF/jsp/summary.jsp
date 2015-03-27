@@ -10,7 +10,7 @@
 
 <title>KOPSAVILKUMS</title>
 
-
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 </head>
 <body onload = "start()">
 
@@ -27,34 +27,43 @@
 		}
 	</script>
 	
-	<h1>KOPSAVILKUMS</h1>
 	
-	<a href="/web-latv-summary/index.html">Sākums</a>
-	<a href="/web-latv-summary/summary.html">Kopsavilkums</a>
-	<a href="/web-latv-summary/sim-table.html">Līdzības matrica</a>
-	<a href="/web-latv-summary/all-sentences.html">Teikumi</a>
-	<a href="/web-latv-summary/all-iterations.html">Text-rank</a>
+	<div class="page-header">
+	<center><h1>KOPSAVILKUMS</h1></center>
+</div>
 	
+	
+	<ul class="nav nav-tabs nav-justified">
+  		<li role="presentation"><a href="/web-latv-summary/index.html">Sākums</a></li>
+  		<li role="presentation" class="active"><a href="#">Kopsavilkums</a></li>
+  		<li role="presentation" ><a href="/web-latv-summary/sim-table.html">Līdzības matrica</a></li>
+  		<li role="presentation" ><a href="/web-latv-summary/all-sentences.html">Teikumi</a></li>
+  		<li role="presentation"><a href="all-iterations.html">Text-rank</a></li>
+</ul>
 	
 	<br/>
-	<b>Kopsavilkuma apjoms: ${text.getPercents()} %</b>
-	<br/>
+	<div class="well well-sm">
+	<span class="label label-primary">Apjoms: ${text.getPercents()} %</span>
+	<br/><br/>
 	
 	<ol>
 		<c:forEach var ="listValue" items="${text.getSummaryList()}">
-			<li>${listValue.getOriginalSentence()} [ID: ${listValue.getID()} RANGS: ${listValue.getRank() }] </li><br/>
+			
+			<li>${listValue.getOriginalSentence()}  <span class="label label-info">[ID: ${listValue.getID()} RANGS: ${listValue.getRank() }]</span> </li><br/>
+			
+			
 		</c:forEach>
 	</ol>
-	
-	<form:form method="POST" commandName = "text" action="/web-latv-summary/submit-article.html">
+	</div>
+	<form:form method="POST" class="form-horizontal" commandName = "text" action="/web-latv-summary/submit-article.html">
 		<div id = "percentsDIV">Kopsavilkuma apjoms: 50 %</div>
 		
-		0
+		
 		<form:input id = "range"  oninput = "sliderChanged(this.value)" path = "percents" type ="range" min = "0" max = "100"/>
-		100
+		
 		<br/>
 		<br/>
-		<input type="submit" value = "Izmainit kopsavilkuma apjomu"/>
+		<center><input type="submit" class="btn btn-primary" value = "Izmainit kopsavilkuma apjomu"/></center>
 		
 		
 	</form:form>
@@ -63,6 +72,9 @@
 	<br/>
 	
 	
+	 <footer>
+		  <center><p>Kristaps B. 2015</p></center>
+	</footer> 
 	
 </body>
 </html>

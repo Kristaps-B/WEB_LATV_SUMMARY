@@ -8,27 +8,29 @@
 
 <title>Teikumu salīdzinājums</title>
 
-<style>
- table, th, td {
- 	border: 2px solid black;
- 	border-collapse: collapse;
- }
- th, td {
- 	padding: 5px;
- }
-</style>
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 
 </head>
 <body>
-<h1>TEIKUMU SALĪDZINĀJUMS</h1>
 
-${text.getSentenceComparison().getFirstSentenceID()} ) ${text.getSentenceComparison().getFirstSentence()}
+<div class="page-header">
+	<center><h1>TEIKUMU SALĪDZINĀJUMS</h1></center>
+</div>
+
+<ul class="list-group">
+<li class="list-group-item list-group-item-success">${text.getSentenceComparison().getFirstSentenceID()} ) ${text.getSentenceComparison().getFirstSentence()}</li>
+<li class="list-group-item list-group-item-info">${text.getSentenceComparison().getSecondSentenceID()} ) ${text.getSentenceComparison().getSecondSentence()}</li>
+</ul>
+
+
 <br/>
-${text.getSentenceComparison().getSecondSentenceID()} ) ${text.getSentenceComparison().getSecondSentence()}   
 
+<div class="well well-sm">
 
-<br/>
-<table border = "1" style="width:100%">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <center><div class="panel-heading">Teikumi</div></center>
+<table class = "table">
 <tr>
 	<td>Vārdi</td>
 	<td>Pirmā teikuma vektors</td>
@@ -42,10 +44,18 @@ ${text.getSentenceComparison().getSecondSentenceID()} ) ${text.getSentenceCompar
 </c:forEach>
 
 </table>
-Teikumu kosinuss līdzība ir: ${text.getSentenceComparison().getRank()}
-<br/>
+</div>
+<span class="label label-warning">Teikumu kosinuss līdzība ir: ${text.getSentenceComparison().getRank()}</span>
+</div>
 
-<a href="/web-latv-summary/sim-table.html">Atpakaļ</a> 
+
+
+<center><p><a class="btn btn-primary btn-lg" href="/web-latv-summary/sim-table.html" role="button">Atpakaļ</a></p></center>
+
+
+ <footer>
+		  <center><p>Kristaps B. 2015</p></center>
+	</footer> 
 
 </body>
 </html>

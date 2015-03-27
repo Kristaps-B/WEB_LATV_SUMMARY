@@ -9,6 +9,9 @@
 
 <title>Kopsavilkuma sistēma</title>
 
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+
+
 
 </head>
 <body onload = "start()">
@@ -26,27 +29,39 @@
 		}
 	</script>
 	
-	<h1>KOPSAVILKUMU VEIDOŠANAS SISTĒMA LATV-SUMM</h1>
+	<div class="page-header">
+	<center><h1>KOPSAVILKUMU VEIDOŠANAS SISTĒMA LATV-SUMM</h1></center>
+</div>
+
 	<br/>
 	
-	
-	
-	
-	<form:form method="POST" commandName = "text" action="/web-latv-summary/submit-article.html">
+	<div class="well well-sm">
+	<div class="input-group">
+
+	<form:form method="POST" class="form-horizontal" commandName = "text" action="/web-latv-summary/submit-article.html">
 		<b>Teksts:</b><br/>
-		<form:textarea path = "text"  rows="16" cols="120"></form:textarea>
+		
+		<form:textarea class="form-control" path = "text"  rows="16" cols="140"></form:textarea>
+	
 		<br/>
 		<div id = "percentsDIV">Kopsavilkuma apjoms: 50 %</div>
 		
-		0
+		
 		<form:input id = "range" oninput = "sliderChanged(this.value)" path = "percents" type ="range" min = "0" max = "100" value = "50"/>
-		100
+		
 		<br/>
 		<br/>
-		<input type="submit" value = "Izveidot kopsavilkumu"/>
+		<center><input type="submit" class="btn btn-primary" value = "Izveidot kopsavilkumu"/></center>
 		
 		
 	</form:form>
+
 	
+	</div>
+	</div>
+	
+	 <footer>
+		  <center><p>Kristaps B. 2015</p></center>
+	</footer> 
 </body>
 </html>

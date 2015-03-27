@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Iterācijas</title>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 
 
 </head>
@@ -18,15 +18,15 @@
 </div>
 
 	<ul class="nav nav-tabs nav-justified">
-  		<li><a href="/web-latv-summary/index.html">Sākums</a></li>
-  		<li><a href="/web-latv-summary/summary.html">Kopsavilkums</a></li>
-  		<li><a href="/web-latv-summary/sim-table.html">Līdzības matrica</a></li>
-  		<li><a href="/web-latv-summary/all-sentences.html">Teikumi</a></li>
+  		<li role="presentation"><a href="/web-latv-summary/index.html">Sākums</a></li>
+  		<li role="presentation"><a href="/web-latv-summary/summary.html">Kopsavilkums</a></li>
+  		<li role="presentation"><a href="/web-latv-summary/sim-table.html">Līdzības matrica</a></li>
+  		<li role="presentation"><a href="/web-latv-summary/all-sentences.html">Teikumi</a></li>
   		<li role="presentation" class="active"><a href="#">Text-rank</a></li>
 	</ul>
 	
 	<br/>
-	
+	<div class="well well-sm">
 	<div class="panel panel-default">
   <!-- Default panel contents -->
   <center><div class="panel-heading">Text-Rank</div></center>
@@ -47,7 +47,7 @@
 	</tr>	
 	</c:forEach>
 	</table>
-	
+	</div>
 	</div>
 	 <footer>
 		  <center><p>Kristaps B. 2015</p></center>

@@ -7,37 +7,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Teikumi</title>
 
-<style>
- table, th, td {
- 	border: 2px solid black;
- 	border-collapse: collapse;
- }
- th, td {
- 	padding: 5px;
- }
-</style>
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 
 
 </head>
 <body>
-<h1>TEIKUMI</h1>
+
+<div class="page-header">
+	<center><h1>TEIKUMI</h1></center>
+</div>
 
 
+<ul class="nav nav-tabs nav-justified">
+  		<li role="presentation"><a href="/web-latv-summary/index.html">Sākums</a></li>
+  		<li role="presentation"><a href="/web-latv-summary/summary.html">Kopsavilkums</a></li>
+  		<li role="presentation"><a href="/web-latv-summary/sim-table.html">Līdzības matrica</a></li>
+  		<li role="presentation" class="active"><a href="#">Teikumi</a></li>
+  		<li role="presentation"><a href="all-iterations.html">Text-rank</a></li>
+</ul>
 
-  	<a href="/web-latv-summary/index.html">Sākums</a>
-  	<a href="/web-latv-summary/summary.html">Kopsavilkums</a>
-  		<a href="/web-latv-summary/sim-table.html">Līdzības matrica</a>
-  		<a href="/web-latv-summary/all-sentences.html">Teikumi</a>
-  	<a href="/web-latv-summary/all-iterations.html">Text-rank</a>
-
-	
 	
 	
 	
 	
 	
 	<br/>
-	<table border = "1" style="width:100%">
+	<div class="well well-sm">
+
+		<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <center><div class="panel-heading">Teikumi</div></center>
+	<table class = "table">
 	<tr>
 		<td>ID</td>
 		<td>Originalais teikums</td>
@@ -46,9 +46,17 @@
 	</tr>
 	<c:forEach var = "sentence" items = "${text.getSentences()}" varStatus = "i" >
 		<tr>
-			<td>${sentence.getID()}</td> <td>${sentence.getOriginalSentence()} </td> <td>${sentence.getNewSentence()}</td> <td>${sentence.getRank()}</td>
+			<td>${sentence.getID()}</td> <td>${sentence.getOriginalSentence()} </td> <td>${sentence.getNewSentence()}</td> <td><span class="label label-info">${sentence.getRank()}</span></td>
 		<tr>
 	</c:forEach>
+	
+	</table>
+	</div>
+	</div>
+	
+		 <footer>
+		  <center><p>Kristaps B. 2015</p></center>
+	</footer> 
 
 </body>
 </html>

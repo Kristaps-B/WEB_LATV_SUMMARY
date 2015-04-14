@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>Kopsavilkuma sistēma</title>
+<title>LATV-SUMM</title>
 
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 
@@ -30,7 +30,7 @@
 	</script>
 	
 	<div class="page-header">
-	<center><h1>KOPSAVILKUMU VEIDOŠANAS SISTĒMA LATV-SUMM</h1></center>
+	<center><h1>LATV-SUMM</h1></center>
 </div>
 
 	<br/>

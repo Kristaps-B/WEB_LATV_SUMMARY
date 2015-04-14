@@ -42,10 +42,12 @@ public class MainController {
 	//Session attribute 'text' required - not found in session
 	
 	@RequestMapping(value = "/submit-article", method = RequestMethod.POST)
-	public String submitArticleController(@ModelAttribute("text") MyModel text) {
+	public String submitArticleController(@ModelAttribute("text") MyModel text) throws Exception {
 		
 		
 		//text.createList();
+		
+		if (text.getText().length() == 0  || text.getText().length() > 10000) throw new Exception("Notika kïûda!");
 		
 		text.summarize();
 		
@@ -93,6 +95,7 @@ public class MainController {
 	
   @ExceptionHandler(Exception.class)
   public String exceptionController() {
+	  
     return "exception";
   }
   

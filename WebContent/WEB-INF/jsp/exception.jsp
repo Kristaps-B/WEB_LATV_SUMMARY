@@ -9,5 +9,10 @@
 </head>
 <body>
 <h1>UPS! KĻŪDA!</h1>
+<br/>
+Iespējamie iemesli: <br/><br/>
+1. Teksts netika ievadīts,<br/>
+2. Teksts ir garāks par 10 000 simboliem,<br/>
+3. Kaut kas cits.<br/>
 </body>
 </html>

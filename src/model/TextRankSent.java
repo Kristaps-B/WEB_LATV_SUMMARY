@@ -38,6 +38,7 @@ public class TextRankSent {
 
 			
 		}
+		showScoreVector();
 
 	}
 	
@@ -120,7 +121,10 @@ public class TextRankSent {
 		for (int i = 0; i < scoreVector.length; i++) {
 			// System.out.println("Atskiriba: "+Math.abs(scoreVector[i] -
 			// oldScoreVector[i]));
+			System.out.println("Starpiba: "+ Math.abs(scoreVector[i] - oldScoreVector[i]));
+			
 			if (Math.abs(scoreVector[i] - oldScoreVector[i]) > alfa) {
+		
 				return true;
 			}
 		}
